@@ -1,0 +1,10 @@
+services:
+  measurement:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ["sh", "/package/experiments/measure.sh"]
+    volumes:
+      - ./package:/package
+      - /lib/modules:/lib/modules
+    privileged: true 
